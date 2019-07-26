@@ -1,0 +1,20 @@
+#!/bin/bash
+RETVAL=0
+# The following value must be edited!  Please call the IOC name
+# something that makes sense to everybody.
+# Remember that the name of IOC you call it here is the one you must
+# use to log back in to the GNU Screen session (otherwise, you may have
+# to keep searching for the correct IOC).
+# This script will call a script placed in /home/sysuser/startup_scripts
+# with the same name as the program name.  So, that script must
+# exist in that directory.
+
+prog="SlowCweb"
+
+# The following line also must be edited to reflect the locateion of the 
+# actual iocBoot directory in the soft IOC.  Otherwise, the IOC will not 
+# start properly.  
+
+cd /home/sysuser/iocTop/glmonitor_new
+ 
+screen -S $prog -d -m ./main.py
